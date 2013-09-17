@@ -1,0 +1,44 @@
+/*
+MySQL Data Transfer
+Source Host: localhost
+Source Database: fnsttalk
+Target Host: localhost
+Target Database: fnsttalk
+Date: 2011/11/03 9:25:40
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for role_menu
+-- ----------------------------
+CREATE TABLE `role_menu` (
+  `role_id` varchar(32) NOT NULL,
+  `menu_id` varchar(32) NOT NULL,
+  PRIMARY KEY  (`role_id`,`menu_id`),
+  KEY `FK14042788FD5B33A2` (`menu_id`),
+  KEY `FK14042788C5F91210` (`role_id`),
+  CONSTRAINT `FK14042788C5F91210` FOREIGN KEY (`role_id`) REFERENCES `roleinfo` (`id`),
+  CONSTRAINT `FK14042788FD5B33A2` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records 
+-- ----------------------------
+INSERT INTO `role_menu` VALUES ('ROLE_MANAGER', '402881e532681f8b0132682029910002');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '402881e532681f8b0132682029910002');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a326200ff01326201ffec0004');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a326200ff013262021a6a0008');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a326200ff0132620265f9000e');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266d3dd5f000c');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266d6b7e60018');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266d71ad6001d');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266d78f4b0022');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266d82c940027');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266da95760033');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266db1de00038');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266db868d003d');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a3266d0ee013266dc55d40047');
+INSERT INTO `role_menu` VALUES ('ROLE_MANAGER', '8a27029a33581cdb0133581ec6d30016');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a33581cdb0133581ec6d30016');
+INSERT INTO `role_menu` VALUES ('ROLE_MANAGER', '8a27029a33581cdb0133581f7b5e001b');
+INSERT INTO `role_menu` VALUES ('ROLE_ROOT', '8a27029a33581cdb0133581f7b5e001b');

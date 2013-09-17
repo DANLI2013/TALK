@@ -1,0 +1,126 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.qin {
+	clear: both;
+}
+
+.editTextarea {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #999;
+	border-right-color: #ccc;
+	border-bottom-color: #ccc;
+	border-left-color: #999;
+	width: 100%;
+	overflow: auto;
+}
+.ebPhotoBox {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	display: block;
+}
+.ebNowUp {
+	color: #F30;
+	background-color: #FFF;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+.editBox_imgBox {
+	height: 122px;
+	width: 100px;
+	border: 1px solid #e3e3e3;
+	padding: 2px;
+	display: inline-block;
+	margin-top: 7px;
+	margin-right: 7px;
+	position: relative;
+	margin-bottom: 30px;
+	text-align: center;
+	zoom:1;
+	*display: inline;
+	background-color: #FFF;
+}
+.editBox_img {
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+	display: block;
+}
+.editBox_img img {
+	height: auto;
+	width: 100px;
+}
+.editBox_imgName {
+	line-height: 20px;
+	color: #999;
+	text-align: center;
+	height: 20px;
+	font-size: 12px;
+	width: 98px;
+	margin-right: auto;
+	margin-left: auto;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #ccc;
+	border-right-color: #e3e3e3;
+	border-bottom-color: #e3e3e3;
+	border-left-color: #ccc;
+}
+.editBox_imgRemove {
+	color: #336699;
+	text-decoration: none;
+	line-height: normal;
+	position: absolute;
+	left: 81px;
+	top: 130px;
+	font-size: 12px;
+	width: 29px;
+}
+.editBox_imgRemove:hover {
+	text-decoration: underline;
+}
+.editBox_tool {
+	text-align: right;
+}
+.editBox_tool a {
+	line-height: 25px;
+	color: #06F;
+	height: 25px;
+	font-size: 12px;
+	text-decoration: none;
+}
+.flash_upDiv {
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+.editBox .editBoxLi {
+	padding-left: 50px;
+	position: relative;
+	padding-bottom: 7px;
+	min-height:28px;
+	_height:28px;
+}
+.editBoxLi .editBox_Label {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	line-height: normal;
+	height: 28px;
+}

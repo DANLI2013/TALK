@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="transfer_selects.css">
+<script type="text/javascript" src="../base/jquery1.3.js"></script>
+<script type="text/javascript" src="TransferSelects.js"></script>
+<script type="text/javascript">
+var users = [];
+
+$(function(){
+users.push(["1","天好冷"]);
+users.push(["2","segalove"]);
+
+var transferSelect = new TransferSelects("leaderIds",users);
+});
+
+</script>
+</head>
+
+<body>
+	<select id="leaderIds" multiple="multiple" name="leaderIds" class="formStyleOne_selectM" validateType="required" method="transfer">
+    </select>
+</body>
+</html>

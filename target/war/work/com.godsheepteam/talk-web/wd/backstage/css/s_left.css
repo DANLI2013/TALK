@@ -1,0 +1,172 @@
+#gxz {
+	width: 163px;
+	float: left;
+}
+#gxz h3 a {
+	font-size: 12px;
+	color: #FFFFFF;
+	display: block;
+	height: 23px;
+	width: 148px;
+	padding-left: 15px;
+	padding-top: 6px;
+	margin-top: 10px;
+	cursor: pointer;
+}
+ul {
+	background-color: #FFFFFF;
+	background-image: url(../img/left_link_bj003.gif);
+	background-repeat: repeat-y;
+	background-position: right top;
+	padding-top: 7px;
+	display: none;
+}
+
+.h3_before a {
+	background-image: url(../img/left_h3_bj001.gif);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.h3_before a:hover {
+	background-position: left -73px;
+}
+.h3_after a {
+	background-position: right -37px;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+	background-image: url(../img/left_h3_bj001.gif);
+}
+.link_before a {
+	background-image: url(../img/left_link_bj001.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 22px;
+	width: 136px;
+	display: block;
+	color: #777777;
+	padding-left: 27px;
+	padding-top: 3px;
+}
+.link_before a:hover {
+	color: #000000;
+	background-position: left -50px;
+}
+
+.link_after a {
+	background-image: url(../img/left_link_bj001.gif);
+	background-repeat: no-repeat;
+	background-position: right -25px;
+	height: 22px;
+	width: 136px;
+	display: block;
+	color: #000000;
+	padding-left: 27px;
+	padding-top: 3px;
+}
+
+.link_footer {
+	background-image: url(../img/left_link_bj002.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	display: block;
+	height: 7px;
+	width: 163px;
+	margin-top: 7px;
+}
+.gss_box {
+	background-image: url(../img/god_sheep_say01.gif);
+	width: 154px;
+	padding-top: 53px;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+}
+.gss_box_2 {
+	background-image: url(../img/god_sheep_say01.gif);
+	width: 154px;
+	padding-top: 35px;
+	background-color: #FFFFFF;
+	background-repeat: no-repeat;
+}
+.gss_footer {
+	height: 53px;
+	width: 154px;
+	display: block;
+	background-image: url(../img/god_sheep_say02.gif);
+	margin-top: 25px;
+	background-position: left bottom;
+}
+.gss_footer_2 {
+	height: 50px;
+	width: 154px;
+	display: block;
+	background-image: url(../img/god_sheep_say02_2.gif);
+	background-position: left bottom;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+	margin-top: 15px;
+}
+.link_s {
+	color: #009DFF;
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #009DFF;
+}
+.gs_say {
+	width: 120px;
+	padding-right: 15px;
+	padding-left: 15px;
+	line-height: 175%;
+}
+.say_2 {
+	padding-left: 12px;
+	padding-right: 10px;
+}
+
+#return {
+	background-image: url(../img/xfy_return02.gif);
+	height: 27px;
+	width: 119px;
+	display: block;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: 12px;
+}
+
+body {
+	background-color: #3D3D3D;
+}
+.dtree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #666;
+	white-space: nowrap;
+	padding-left: 4px;
+	margin-top: 5px;
+}
+.dtree img {
+	border: 0px;
+	vertical-align: middle;
+}
+.dtree a {
+	color: #333;
+	text-decoration: none;
+}
+.dtree a.node, .dtree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;
+}
+.dtree a.node:hover, .dtree a.nodeSel:hover {
+	color: #333;
+	text-decoration: underline;
+}
+.dtree a.nodeSel {
+	background-color: #c0d2ec;
+}
+.dtree {
+	overflow: auto;
+}

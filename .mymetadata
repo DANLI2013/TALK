@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="fnstTalk"
+  id="myeclipse.1319520335421"
+  context-root="/fnstTalk"
+  j2ee-spec="5.0"
+  archive="fnstTalk.war">
+  <attributes>
+    <attribute name="webrootdir" value="/src/main/webapp" />
+  </attributes>
+</project-module>
+

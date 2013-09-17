@@ -1,0 +1,450 @@
+* {
+	font-size: 12px;
+	color: #333;
+	margin: 0px;
+	padding: 0px;
+	font-family: "宋体", "黑体";
+}
+a {
+	text-decoration: none;
+}
+li {
+	list-style-type: none;
+}
+img {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+
+input[type=txt]:focus {
+	border-color:#ccc;
+	background-color:#f7f7f7;
+	
+}
+.green {
+	color: #7faa28;
+}
+.orange {
+	color: #f97510;
+}
+
+
+.gxz {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.gray {
+	color: #909090;
+}
+.red {
+	color: #C00;
+}
+
+
+.GTOut_left {
+	float: left;
+	width: 200px;
+	padding-top: 34px;
+}
+.GT_logo {
+	text-align: right;
+	height: 36px;
+}
+
+.GT_logo a{
+	font-size: 34px;
+	color: #7FAA28;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	line-height: 34px;
+}
+.GT_logo a img {
+
+}
+.GT_leftP {
+	text-align: right;
+}
+.GT_leftP a {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.GT_loginDiv {
+	margin-top: 150px;
+	height: 145px;
+	width: 900px;
+	float: left;
+	position: relative;
+	background-image:url(../img/gstTalk_out06.gif)
+	
+}
+.GT_loginBox {
+	height: 176px;
+	width: 324px;
+	position: absolute;
+	left: 291px;
+	top: -13px;
+	background-image: url(../img/gstTalk_out07.gif);	
+
+}
+.GT_loginBoxH3 {
+	line-height: 45px;
+	height: 45px;
+	padding-left: 20px;
+	background-image: url(../img/gstTalk_out02.gif);
+	background-repeat: no-repeat;
+	background-position: 8px center;
+	font-size: 12px;
+}
+.GT_loginFormLi {
+	display: block;
+	height: 35px;
+}
+.GT_loginFormLabel {
+	text-align: right;
+	width: 80px;
+	color: #909090;
+	display: block;
+	float: left;
+	line-height: 20px;
+}
+.GT_loginFormText {
+	height: 20px;
+	width: 170px;
+	line-height: 20px;
+	border: 1px solid #cccccc;
+	-o-border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+.GT_loginFormLiEnd {
+	height: 30px;
+	padding-left: 80px;
+}
+.GT_zhuceBut {
+
+	display: block;
+
+
+}
+.GT_zhuceBut a {
+	line-height: 37px;
+	color: #FFF;
+	text-align: center;
+	display: block;
+	height: 37px;
+	width: 96px;
+	-o-border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	background-image: url(../img/gstTalk_out05.gif);
+}
+.GT_zhuceSay {
+	padding-top: 10px;
+}
+.GT_buttonBlack {
+	height: 24px;
+	border-radius:3px;
+	color: #FFF;
+	line-height: 24px;
+	cursor: pointer;
+	background-image: url(../img/gstTalk_out08.gif);
+	text-align: center;
+	width: 68px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+.GT_zhuceDiv {
+	position: absolute;
+	left: 650px;
+	top: 40px;
+	width: 207px;
+}
+.login_okInfo {
+	width: 300px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 15px;
+}
+.GT_photo100 {
+	padding-top: 5px;
+	padding-left: 5px;
+	height: 112px;
+	width: 113px;
+	display: inline-block;
+	background-image: url(../img/gstTalk_outPng1.png);
+	_background-image: url(../img/gstTalk_out13.gif);
+}
+.GT_photo100 a {
+	display: block;
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+}
+.GT_photo100 a img {
+	height: auto;
+	width: 100px;
+}
+.login_okInfo .GT_photo100 {
+	float: left;
+	margin-right: 15px;
+}
+.login_okInfoName {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 30px;
+	height: 30px;
+}
+.login_okInfoTool {
+	line-height: 22px;
+}
+.GTleftNav_li {
+	line-height: 25px;
+	text-align: right;
+}
+.GTOut_right {
+	float: right;
+	width: 650px;
+	padding-top: 75px;
+}
+.GTOut_rightH3 {
+	font-size: 14px;
+	height: 20px;
+}
+.GTOut_rightStepDiv {
+	margin-bottom: 23px;
+}
+.GTOut_rightTabDiv {
+	margin-bottom: 23px;
+}
+.GTOut_rightStep {
+	line-height: 26px;
+	display: inline-block;
+	height: 26px;
+	margin-right: 20px;
+	padding-right: 25px;
+	color: #909090;
+	background-image: url(../img/gstTalk_out03.gif);
+	background-repeat: no-repeat;
+	background-position: right 7px;
+}
+.GTOut_rightStepNow {
+	font-weight: bold;
+	color: #7FAA28;
+}
+.GTOut_rightTab {
+	line-height: 26px;
+	display: inline-block;
+	height: 26px;
+	color: #909090;
+	background-position: right 7px;
+}
+.GTOut_rightTabLine {
+	line-height: 26px;
+	display: inline;
+	height: 26px;
+	padding-right: 20px;
+	padding-left: 20px;
+	font-weight: normal;
+	color: #909090;
+}
+.GTOut_rightTabNow {
+	color: #7FAA28;
+}
+
+.GTOut_rightStepEnd {
+	background-image: none;
+}
+.GTOut_formLabel {
+	line-height: 19px;
+	display: block;
+	height: 19px;
+	color: #909090;
+}
+.GTOut_formLi {
+	display: block;
+	padding-bottom: 15px;
+}
+.GTOut_formText {
+	height: 20px;
+	width: 176px;
+	border:#dadada 1px solid;
+	-o-border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	line-height: 20px;
+}
+.GTOut_formTextarea {
+	height: 60px;
+	width: 270px;
+	border:#dadada 1px solid;
+	-o-border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	line-height: 20px;
+}
+.GTOut_formLabeRadio {
+	margin-right: 20px;
+}
+.GTOut_formLabeRadio input {
+	margin-right: 3px;
+	vertical-align: middle;
+	margin-top: -1px;
+}
+.addPhoto_div {
+	padding-top: 14px;
+	padding-bottom: 19px;
+}
+.okTextBox {
+	line-height: 26px;
+	margin-bottom: 13px;
+}
+.GTOut_groupTop {
+	position: relative;
+	margin-top: 5px;
+	padding-bottom: 32px;
+}
+.GTOut_groupSearchInfo {
+	color: #909090;
+	padding-top: 8px;
+}
+
+.GTOut_groupCreate {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: inline-block;
+	height: 29px;
+	width: 91px;
+	line-height: 29px;
+	color: #FFF;
+	text-align: center;
+	background-image: url(../img/gstTalk_out11.gif);
+}
+.GTOut_groupSearchText {
+	line-height: 25px;
+	height: 25px;
+	width: 297px;
+	border: 1px solid #ccc;
+	-o-border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	
+}
+.GTOut_groupSearchBut {
+	height: 29px;
+	width: 80px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	cursor: pointer;
+	background-image: url(../img/gstTalk_out10.gif);
+}
+.GTOut_groupLi {
+	display: block;
+	height: 96px;
+	padding-bottom: 5px;
+	padding-left: 116px;
+	position: relative;
+	margin-bottom: 15px;
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #ccc;
+}
+.GTOut_groupLiPhoto {
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 95px;
+	width: 95px;
+	overflow: hidden;
+	background-image: url(../img/gstTalk_out12.gif);
+}
+.GTOut_groupLiPhoto a {
+	width: 87px;
+	display: block;
+	height: 87px;
+	overflow: hidden;
+}
+.GTOut_groupLiPhoto img {
+	width: 87px;
+}
+.GTOut_groupLiTool {
+	position: relative;
+	height: 20px;
+}
+.GTOut_groupLiAdd {
+	line-height: 20px;
+	color: #FFF;
+	background-color: #7FAA28;
+	height: 20px;
+	width: 64px;
+	display: inline-block;
+	-o-border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	text-align: center;
+}
+.GTOut_groupLiAdd_gray {
+	line-height: 20px;
+	color: #FFF;
+	background-color: #ccc;
+	height: 20px;
+	width: 64px;
+	display: inline-block;
+	-o-border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	text-align: center;
+}
+.GTOut_groupLiTxt {
+	min-height:44px;
+	line-height: 17px;
+	color: #909090;
+}
+.GTOut_groupLiName {
+	line-height: 19px;
+	height: 19px;
+}
+.GTOut_groupLiName .gray {
+	font-weight: normal;
+}
+
+
+.GTOut_groupLiCreator {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	line-height: 20px;
+	color: #909090;
+}
+.GTOut_formErr {
+	line-height: 18px;
+	color: #C00;
+}
+
+
+
+
+/***********page count****************/
+.pagecont { margin:10px; text-align:center; line-height:23px; }
+.pagecont em,
+.pagecont a { border:1px solid #999;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px; padding:3px 6px; text-decoration:none; }
+.pagecont em { color:#999; }
+.pagecont a.cur,
+.pagecont a:hover { background:#945B41; border-color:#945B41; color:#fff; }
+.pagecont a.cur { font-weight:700; }

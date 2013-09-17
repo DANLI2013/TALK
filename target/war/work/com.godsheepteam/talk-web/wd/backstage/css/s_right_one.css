@@ -1,0 +1,80 @@
+.us {
+	display: inline;
+	float: right;
+	padding-top: 20px;
+	color: #CCC;
+}.fast_nav {
+	margin-top: 50px;
+	width: 750px;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url(../img/s_right_one_003.gif);
+	background-repeat: no-repeat;
+	background-position: 530px 70px;
+}
+.nav_box li a:hover {
+	background-image: url(../img/s_right_one_001.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.nav_box li {
+	display: block;
+	height: 63px;
+	width: 146px;
+	float: left;
+	margin-right: 5px;
+	position: relative;
+}
+.nav_even {
+	background-image: url(../img/s_right_one_even.gif);
+	background-repeat: no-repeat;
+}
+.nav_odd {
+	background-image: url(../img/s_right_one_odd.gif);
+}
+.nav_box li a {
+	height: 40px;
+	width: 98px;
+	padding-top: 23px;
+	padding-right: 20px;
+	padding-left: 28px;
+	display: block;
+	line-height: normal;
+}
+.nav_NO {
+	display: block;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	left: 5px;
+	top: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 30px;
+	font-weight: bold;
+	line-height: normal;
+}
+.nav_even .nav_NO {
+	color: #FFF;
+}
+.nav_odd .nav_NO {
+	color: #333;
+}
+.link_box {
+	background-image: url(../img/s_right_one_002.gif);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	display: inline;
+	width: 100%;
+	padding-bottom: 25px;
+	float: left;
+	margin-top: 25px;
+	text-align: right;
+}
+.link_box a {
+	color: #999;
+	text-align: right;
+	height: 18px;
+}
+.link_box a:hover {
+	color: #009DFF;
+}

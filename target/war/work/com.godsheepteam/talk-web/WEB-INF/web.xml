@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<display-name>GSTTalk</display-name>
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>talk.root</param-value>
+	</context-param>
+	<!-- log4j配置 -->
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/config/log4j.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jRefreshInterval</param-name>
+		<param-value>6000000000</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener>
+
+	<!--  Spring 服务层的配置文件 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/config/talk-main.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 将WEB环境初始化到线程变量中 -->
+	<filter>
+		<filter-name>webContextFilter</filter-name>
+		<filter-class>com.godsheepteam.util.web.WebContextFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>webContextFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 字符过滤器 -->
+	<filter>
+		<filter-name>setCharacterEncoding</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>setCharacterEncoding</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Spring Security配置-->
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 用户登录过滤器 -->
+	<filter>
+		<filter-name>UserInfoFilter</filter-name>
+		<filter-class>com.godsheepteam.sys.security.UserInfoFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>UserInfoFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- 用户请求次数控制过滤器 -->
+	<filter>
+		<filter-name>UserTokenControlFilter</filter-name>
+		<filter-class>com.godsheepteam.sys.security.captcha.UserTokenControlFilter</filter-class>
+		<init-param>
+			<param-name>interval</param-name>
+			<param-value>300000</param-value>
+		</init-param>
+		<init-param>
+			<param-name>allow</param-name>
+			<param-value>160</param-value>
+		</init-param>
+		<init-param>
+			<param-name>checkPath</param-name>
+			<param-value>/check.jsp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>UserTokenControlFilter</filter-name>
+		<url-pattern>*.htm</url-pattern>
+	</filter-mapping>
+	
+	<!--
+		Spring MVC 的Servlet，它将加载WEB-INF/annomvc-servlet.xml 的 配置文件，以启动Spring
+		MVC模块
+	-->
+	<servlet>
+		<servlet-name>mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value></param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvc</servlet-name>
+		<url-pattern>*.htm</url-pattern>
+	</servlet-mapping>
+	
+	<!-- dwr配置 -->
+	<servlet>
+		<display-name>DWR Servlet</display-name>
+		<servlet-name>dwr-invoker</servlet-name>
+		<servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+		<!-- 指定配置文件的读取位置 -->
+		<init-param>
+			<param-name>config-1</param-name>
+			<param-value>/WEB-INF/config/dwr.xml</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<!-- 开启推功能 -->
+		<init-param>
+			<param-name>activeReverseAjaxEnabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dwr-invoker</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+
+	<!--  验证码生成器 -->
+	<servlet>
+		<servlet-name>jcaptcha</servlet-name>
+		<servlet-class>com.octo.captcha.module.servlet.image.SimpleImageCaptchaServlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jcaptcha</servlet-name>
+		<url-pattern>/jcaptcha.jpg</url-pattern>
+	</servlet-mapping>
+
+	<!-- 验证码处理servlet -->
+	<servlet>
+		<servlet-name>CheckServlet</servlet-name>
+		<servlet-class>com.godsheepteam.sys.security.captcha.CheckServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckServlet</servlet-name>
+		<url-pattern>/servlet/Check</url-pattern>
+	</servlet-mapping>
+
+	<!--  自定义WEB环境监听器 -->
+	<listener>
+		<listener-class>com.godsheepteam.util.web.WebContextListener</listener-class>
+	</listener>
+	
+	<welcome-file-list>
+		<welcome-file>index.htm</welcome-file>
+	</welcome-file-list>
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/404.jsp</location>
+	</error-page>
+
+</web-app>

@@ -1,0 +1,57 @@
+@charset "utf-8";
+.err {
+	display: inline;
+	float: left;
+	height: 43px;
+	background-image: url(err01.PNG);
+	_background-image: url(err01.GIF);
+	background-repeat: no-repeat;
+	padding-left: 31px;
+	position: absolute;
+	left: 266px;
+	top: 55px;
+        z-index:100;
+}
+.err_text {
+	display: inline;
+	float: left;
+	height: 32px;
+	background-image: url(err02.PNG);
+	_background-image: url(err02.GIF);
+	background-repeat: repeat-x;
+	font-size: 12px;
+	color: #fd6c33;
+	padding-top: 11px;
+	text-indent: -15px;
+	_text-indent: 0px;
+	padding-right: 15px;
+	overflow: visible;
+}
+.err_close {
+	background-image: url(err03.PNG);
+	_background-image: url(err03.GIF);
+	display: block;
+	float: left;
+	height: 37px;
+	width: 32px;
+}
+.err_close:hover {
+	background-position: 0px -37px;
+}
+.input_err {
+	background-image: url(err04.GIF);
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-color: #ffffb2;
+	}
+.required {
+	background-image: url(required.GIF);
+	background-repeat: no-repeat;
+	background-position: right top;
+	}
+.required.input_err  {
+	background-image: url(required.GIF);
+	background-repeat: no-repeat;
+	background-position: right center;
+        background-color: #ffffb2;
+	}

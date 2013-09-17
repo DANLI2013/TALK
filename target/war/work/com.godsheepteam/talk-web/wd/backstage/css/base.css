@@ -1,0 +1,36 @@
+* {
+	font-family: "宋体", Arial, "Times New Roman", sans-serif;
+	font-size: 12px;
+	color: #333333;
+	margin: 0px;
+	padding: 0px;
+	line-height: 150%;
+}
+a {
+	text-decoration: none;
+	
+}
+table a:hover {
+	text-decoration: underline;
+}
+
+
+.qin {
+	clear: both;
+}
+
+img {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+li {
+	list-style-type: none;
+}
+#sheep_loading {
+	display: block;
+	left: 0px;
+	top: 0px;
+	position: absolute;
+}

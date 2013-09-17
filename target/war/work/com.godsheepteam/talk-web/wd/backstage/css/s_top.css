@@ -1,0 +1,138 @@
+.gxz {
+	height: 36px;
+	width: 100%;
+	background-image: url(../img/top_nav005.gif);
+	background-repeat: repeat-x;
+	background-position: left;
+	padding-top: 54px;
+	position: relative;
+}
+
+.gxz h1 {
+	position: absolute;
+	top: 25px;
+	left: 33px;
+	background-image: url(../img/sddxmy1.gif);
+	display: block;
+	height: 65px;
+	width: 59px;
+	text-indent: -9999px;
+}
+#sddxmy_say {
+	background-image: url(../img/sddxmy_say_1.png);
+	_background-image: url(../img/sddxmy_say_1.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 25px;
+	padding-bottom: 16px;
+	padding-left: 28px;
+	position: absolute;
+	left: 74px;
+	top: 18px;
+}
+#sddxmy_say blockquote {
+	background-image: url(../img/sddxmy_say_2.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	display: block;
+	height: 22px;
+	color: #000000;
+	float: left;
+	padding-top: 3px;
+}
+#sddxmy_say a {
+}
+#sddxmy_say span {
+	background-image: url(../img/sddxmy_say_3.png);
+	_background-image: url(../img/sddxmy_say_3.gif);
+	background-position: right top;
+	display: block;
+	height: 25px;
+	width: 7px;
+	float: left;
+}
+
+
+
+.top_tool {
+	display: block;
+	width: 98%;
+	padding-right: 2%;
+	position: absolute;
+	top: 0px;
+	height: 15px;
+	left: 0px;
+	margin-top: 15px;
+}
+
+.top_tool a {
+	display: block;
+	height: 43px;
+	width: 30px;
+	float: right;
+	margin-left: 5px;
+	text-indent: -9999px;
+}
+#help {
+	background-image: url(../img/top_nav006.gif);
+}
+#loginout {
+	background-image: url(../img/top_nav007.gif);
+}
+
+
+#top_nav {
+	height: 36px;
+	display: inline;
+	list-style-type: none;
+	margin-left: 180px;
+	float: left;
+}
+#top_nav li {
+	background-repeat: no-repeat;
+	background-position: left top;
+	display: inline;
+	float: left;
+	height: 36px;
+	margin-right: 5px;
+}
+#top_nav .nav_other {
+	background-image: url(../img/top_nav003.gif);
+}
+#top_nav .nav_other a {
+	background-image: url(../img/top_nav004.gif);
+}
+#top_nav .nav_other a span {
+	border-bottom-color: #000000;
+	color: #a7a7a7;
+}
+#top_nav .nav_other a:hover span {
+	border-bottom-color: #a7a7a7;
+}
+
+#top_nav .nav_this {
+	background-image: url(../img/top_nav001.gif);
+}
+#top_nav .nav_this a {
+	background-image: url(../img/top_nav002.gif);
+	border-bottom-color: #CCCCCC;
+}
+#top_nav .nav_this a:hover span {
+	border-bottom-color: #CCCCCC;
+}
+
+#top_nav a {
+	background-repeat: no-repeat;
+	background-position: right top;
+	float: left;
+	padding-right: 30px;
+	padding-left: 30px;
+	height: 30px;
+	padding-top: 6px;
+}
+#top_nav span {
+	border-bottom-style: double;
+	border-bottom-color: #CCCCCC;
+	border-bottom-width: 3px;
+	display: block;
+}

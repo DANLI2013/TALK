@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<link href="layerStyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../base/jquery-1.4.min.js"></script>
+<script type="text/javascript" src="Popup.js"></script>
+<script>
+$(function(){
+	var config = {
+	"width":"400",
+	"height":"190",
+	"title":"杀猪王子",
+	"targetId":"pop",
+	"tiggerId":"layerOpen"
+	}
+	var popup = new Popup(config);
+
+});
+
+</script>
+
+</head>
+
+<body>
+<a href="#" id="layerOpen" class="layerOpen" layer="addName">弹出层01</a>
+
+  <!--  弹出层 -->
+  <div id="pop">
+		<ul class="lsOne_list01">
+            <li class="lsOne_li01">
+            <label class="lsOne_label01">请给宠物起个名字</label>
+            <input type="text" class="lsOne_text01" />
+            </li>
+       </ul>  
+       <br /><br />
+       <div class="lsOne_buttonBox">
+       <input type="submit" class="lsOne_button" value="确认" />
+       </div>
+	</div>
+
+</body>
+</html>

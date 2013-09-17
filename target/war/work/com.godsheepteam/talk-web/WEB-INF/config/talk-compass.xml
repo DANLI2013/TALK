@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<!-- 核心Compass Bean,search及index时使用 -->
+	<bean id="compass" class="org.compass.spring.LocalCompassBean" lazy-init="false">
+		<!-- anontaition式设置 -->
+		<property name="classMappings">
+			<list>
+				<value>com.godsheepteam.talk.domain.entity.ChatGroup</value>
+				<value>com.godsheepteam.domain.entity.PicFile</value>
+				<value>com.godsheepteam.domain.entity.FileInfo</value>
+			</list>
+		</property>
+		<property name="compassConfiguration">
+			<bean class="org.compass.annotations.config.CompassAnnotationsConfiguration"/>
+		</property>
+		<property name="connection" value="/CompassIndex"/>
+		<property name="compassSettings">
+			<props>
+				<prop key="compass.transaction.factory">org.compass.spring.transaction.SpringSyncTransactionFactory</prop>
+				<!-- 配置分词器 -->
+				<prop key="compass.engine.analyzer.default.type">org.wltea.analyzer.lucene.IKAnalyzer</prop>
+				<prop key="compass.engine.similarity.default.type">org.wltea.analyzer.lucene.IKSimilarity</prop>
+				<!-- 开启did you mean功能 -->
+				<prop key="compass.engine.spellcheck.enable">true</prop>
+				<!-- 配置高亮 -->
+				<prop key="compass.engine.highlighter.default.formatter.simple.pre">
+					<![CDATA[<span class="light">]]>
+				</prop>
+				<prop key="compass.engine.highlighter.default.formatter.simple.post">
+					<![CDATA[</span>]]>
+				</prop>
+			</props>
+		</property>
+		<property name="transactionManager" ref="transactionManager"/>
+		<property name="convertersByName">
+		   <map>
+                <entry key="htmlPropertyConverter">
+                    <bean class="com.godsheepteam.basesupport.search.HtmlPropertyConverter"/>
+                </entry>
+            </map>
+		</property>
+	</bean>
+
+	<!-- Compass中建立索引与mirror database change的部件 -->
+	<bean id="compassGps" class="org.compass.gps.impl.SingleCompassGps" init-method="start" destroy-method="stop">
+		<property name="compass" ref="compass"/>
+		<property name="gpsDevices">
+			<list>
+				<bean class="org.compass.spring.device.hibernate.dep.SpringHibernate3GpsDevice">
+					<property name="name" value="hibernateDevice"/>
+					<property name="sessionFactory" ref="sessionFactory"/>
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="searchService" class="com.godsheepteam.basesupport.search.SearchService">
+		<property name="compass" ref="compass"/>
+	</bean>
+
+	<!-- 自动随Spring ApplicationContext启动而重建索引 -->
+	<bean id="compassIndexBuilder" class="com.godsheepteam.basesupport.search.CompassIndexBuilder" lazy-init="false">
+		<property name="compassGps" ref="compassGps"/>
+		<property name="buildIndex" value="false"/>
+		<property name="lazyTime" value="25"/>
+	</bean>
+</beans>

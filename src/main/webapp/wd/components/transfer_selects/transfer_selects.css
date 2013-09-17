@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.formStyleOne_selectM {
+	color: #FF0000;
+	float: left;
+	height: 100px;
+	min-width: 139px;
+	border: 1px solid #39454D;
+	line-height: 175%;
+	font-size: 14px;
+	margin-bottom: 15px;
+	+margin-bottom: 0px;
+	width: 150px;
+}
+.formStyleOne_selectM option {
+	line-height: 175%;
+	font-size: 14px;
+}
+.select_button_box {
+	display: inline;
+	float: left;
+	width: 60px;
+	padding-top: 29px;
+}
+.select_button_box span {
+	display: block;
+	cursor: pointer;
+	height: 14px;
+	width: 33px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.select_left_before {
+	background-image: url(select_button.GIF);
+	background-repeat: no-repeat;
+	background-position: left 0px;
+}
+.select_left_after {
+	background-image: url(select_button.GIF);
+	background-repeat: no-repeat;
+	background-position: left -18px;
+}
+.select_right_before {
+	background-image: url(select_button.GIF);
+	background-repeat: no-repeat;
+	background-position: -43px 0px;
+	margin-top: 5px;
+}
+.select_right_after {
+	background-image: url(select_button.GIF);
+	background-repeat: no-repeat;
+	background-position: -43px -18px;
+	margin-top: 5px;
+}

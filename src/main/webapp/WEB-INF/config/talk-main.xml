@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+			http://www.springframework.org/schema/beans 
+			http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+			http://www.springframework.org/schema/context 
+			http://www.springframework.org/schema/context/spring-context-3.0.xsd
+			http://www.springframework.org/schema/tx 
+			http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+			http://www.springframework.org/schema/aop 
+			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+			
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+				<value>classpath:init.properties</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 优先启动socket服务 -->
+	<bean id="talkServer" class="com.godsheepteam.basesupport.server.websocket.WebSocketServer">
+		<property name="serverDispatchHandler" ref="talkDispatcherHandler"/>
+		<property name="port" value="${webSocketPort}"/>
+	</bean>
+	
+	<context:component-scan base-package="com.godsheepteam">
+		<!-- <context:exclude-filter type="regex" expression="com\.godsheepteam\.basesupport\.server\.flash\..*" /> -->
+	    <context:exclude-filter type="regex" expression="com\.godsheepteam\.basesupport\.jms\..*" />
+	    <context:exclude-filter type="regex" expression="com\.godsheepteam\.basesupport\.mail\..*" />
+	    <context:exclude-filter type="regex" expression="com\.godsheepteam\.basesupport\.quartz\..*" />
+	</context:component-scan>
+	
+	<import resource="talk-cache.xml"/>
+	<import resource="talk-dataAccess.xml"/>
+	<import resource="talk-security.xml"/>
+	<import resource="talk-mvc.xml"/>
+	<import resource="talk-aop.xml"/>
+	<import resource="talk-compass.xml"/>
+	<import resource="talk-business.xml"/>
+	<import resource="talk-scheduler.xml"/>
+	<import resource="talk-init.xml"/>
+	<!-- <import resource="talk-external.xml"/> -->
+</beans>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:security="http://www.springframework.org/schema/security"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/security
+          http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+	<security:http access-denied-page="/permission_denied.jsp">
+		<security:intercept-url pattern="/wd/**/*" filters="none" />
+		<security:intercept-url pattern="/" filters="none" />
+		<security:intercept-url pattern="/index.html" filters="none" />
+		
+		<security:form-login login-processing-url="/login" 
+							 login-page="/" 
+							 authentication-failure-url="/login.jsp?error=true"
+							 default-target-url="/login.htm" />
+							 
+		<security:logout logout-url="/logout" logout-success-url="/" />
+		<security:remember-me key="gstTalk"/>
+		<security:custom-filter before="SWITCH_USER_FILTER" ref="resourceSecurityInterceptor" />
+	</security:http>
+
+	<security:authentication-manager alias="authenticationManager">
+		<security:authentication-provider user-service-ref="userDetailsService">
+			<security:password-encoder hash="md5" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+	
+	<bean id="accessDecisionManager"
+		class="org.springframework.security.access.vote.AffirmativeBased">
+		<property name="allowIfAllAbstainDecisions" value="false" />
+		<property name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.access.vote.RoleVoter" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="resourceSecurityInterceptor"
+		class="org.springframework.security.web.access.intercept.FilterSecurityInterceptor">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="accessDecisionManager" ref="accessDecisionManager" />
+		<property name="objectDefinitionSource" ref="sheepFilterInvocationDefinitionSource" />
+		<property name="observeOncePerRequest" value="false" />
+	</bean>
+
+	<!-- 实现了UserDetailsService接口的类  -->
+	<bean id="userDetailsService" class="com.godsheepteam.talk.security.UserSecurityService"/>
+	
+	<bean id="MenuController" class="com.godsheepteam.controller.security.MenuController">
+		<property name="viewFolder" value="/security/"/>
+		<property name="entityName" value="menu"/>
+		<property name="pageConfig.pageUrl" value="menu" />
+		<property name="pageConfig.pageTitle" value="菜单查询" />
+		<property name="pageConfig.pageHeaderList">
+			<list>
+				<value>菜单名;o.menuName;true;true;false;false;15%</value>
+				<value>菜单链接;o.linkUrl;true;true;false;false;20%</value>
+				<value>菜单序号;o.showOrder;true;true;false;false;20%</value>
+				<value>菜单说明;o.description;false;false;false;false;auto</value>
+				<value>修改/删除;none;false;false;false;false;10%</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="RoleInfoController" class="com.godsheepteam.controller.security.RoleInfoController">
+		<property name="viewFolder" value="/security/"/>
+		<property name="entityName" value="roleInfo"/>
+		<property name="pageConfig.pageUrl" value="roleInfo" />
+		<property name="pageConfig.pageTitle" value="角色查询" />
+		<property name="pageConfig.pageHeaderList">
+			<list>
+				<value>角色名;o.roleName;true;true;false;false;15%</value>
+				<value>角色英文名;o.authority;true;true;false;false;20%</value>
+				<value>菜单描述;o.description;false;false;false;false;auto</value>
+				<value>修改/删除;none;false;false;false;false;10%</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="RoleAndUrlController" class="com.godsheepteam.controller.security.RoleAndUrlController">
+		<property name="viewFolder" value="/security/"/>
+		<property name="entityName" value="roleAndUrl"/>
+		<property name="pageConfig.pageUrl" value="roleAndUrl" />
+		<property name="pageConfig.pageTitle" value="角色-资源映射查询" />
+		<property name="pageConfig.pageHeaderList">
+			<list>
+				<value>优先级;o.sequence;true;true;false;false;15%</value>
+				<value>url;o.url;true;true;false;false;15%</value>
+				<value>url描述;o.urlDescription;true;true;false;false;20%</value>
+				<value>允许访问;o.rolesDescription;false;false;false;false;auto</value>
+				<value>修改/删除;none;false;false;false;false;10%</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="UserInfoController" class="com.godsheepteam.talk.controller.security.UserInfoController">
+		<property name="userInfoService" ref="userInfoService"/>
+		<property name="viewFolder" value="/security/"/>
+		<property name="entityName" value="userInfo"/>
+		<property name="pageConfig.pageUrl" value="userInfo" />
+		<property name="pageConfig.pageTitle" value="用户查询" />
+		<property name="pageConfig.pageHeaderList">
+			<list>
+				<value>用户名;o.userName;true;true;false;false;15%</value>
+				<value>电子邮件;o.email;true;true;false;false;20%</value>
+				<value>是否启用;o.isEnabled;true;true;false;false;12%</value>
+				<value>角色;none;false;false;false;false;auto</value>
+				<value>管理;none;false;false;false;false;10%</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="LayoutController" class="com.godsheepteam.talk.controller.security.LayoutController"/>
+	
+	<bean id="LoginController" class="com.godsheepteam.talk.controller.security.LoginController"/>
+	
+</beans>

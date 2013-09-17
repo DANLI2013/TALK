@@ -1,0 +1,29 @@
+#oc_box {
+	background-image: url(../img/right_bj001_2.gif);
+	width: 15px;
+	float: right;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+#oc_box span {
+	height: 48px;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	margin-top: 217px;
+	float: left;
+	display: block;
+	width: 15px;
+	cursor: pointer;
+}
+.close {
+	background-image: url(../img/right_button001_1.gif);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.open {
+	background-image: url(../img/right_button001_1.gif);
+	background-repeat: no-repeat;
+	background-position: left -50px;
+}

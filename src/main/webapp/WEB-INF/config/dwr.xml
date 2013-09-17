@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr//dwr20.dtd">
+
+<dwr>
+	<allow>
+		<create creator="spring" javascript="securityAjaxService">
+			<param name="beanName" value="securityAjaxService" />
+		</create>
+		<convert  converter="bean"  match="java.lang.StackTraceElement"/>
+		<convert  converter="exception"  match="java.lang.Throwable"/>
+	</allow> 
+</dwr>
